@@ -16,7 +16,3 @@ var assert = {
 
 
 };
-
-assert.isEqual(2,2);
-
-assert.isEqual("Two",2);
