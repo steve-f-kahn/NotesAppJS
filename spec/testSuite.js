@@ -9,29 +9,38 @@ var assert = {
   },
 
   isEqual: function(assertionToCheck, expectedValue){
-    if (assertionToCheck == expectedValue) {
-      console.log(`PASS - ${expectedValue} is equal to ${assertionToCheck}.`)
-    } else {
-      console.log((`FAIL - ${expectedValue} is NOT equal to ${assertionToCheck}.`))
+    if (assertionToCheck !== expectedValue) {
+      throw new Error("Assertion failed: " + assertionToCheck + " is not equal.")
     }
   },
 
    includedInArray: function(arrayToCheck, value) {
-     if (arrayToCheck.includes(value)) {
-     console.log(`PASS - ${value} is inside ${arrayToCheck}`)
-   } else {
-     console.log(value);
-     console.log(`FAIL - ${value} is not present in ${arrayToCheck}.`)
-   }
-
+     if (!arrayToCheck.includes(value)) {
+       throw new Error("Assertion failed: " + value + " is not included in" + arrayToCheck)
+     }
    }
 };
 
 var it = function(nameString, callback){
-  callback()
+  try {
+    callback()
+    var text = "PASS: " + nameString
+     addtext(text, "passColour")
+  }catch(err){
+    text = "FAIL: " + nameString + err + err.stack
+    document.write()
+  }
+
   };
 
-
+var addtext = function(text, passing){
+  var text = document.createTextNode(text)
+  var div = document.createElement("div")
+  div.setAttribute("class", passing)
+  div.append(text)
+  body.append(div)
+  body.append(document.createElement("br"))
+}
 exports.assert = assert
 exports.it = it
 
