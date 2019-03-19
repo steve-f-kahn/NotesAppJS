@@ -1,3 +1,5 @@
+(function(exports) {
+
 var assert = {
 
   isTrue: function(assertionToCheck) {
@@ -18,13 +20,20 @@ var assert = {
      if (arrayToCheck.includes(value)) {
      console.log(`PASS - ${value} is inside ${arrayToCheck}`)
    } else {
+     console.log(value);
      console.log(`FAIL - ${value} is not present in ${arrayToCheck}.`)
    }
 
    }
 };
 
-var it = function(nameString, functionToPass){
-  yourTest = functionToPass;
-  return yourTest;
-};
+var it = function(nameString, callback){
+  callback()
+  };
+
+
+exports.assert = assert
+exports.it = it
+
+
+})(this);
