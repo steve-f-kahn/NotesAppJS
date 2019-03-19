@@ -10,7 +10,7 @@ var assert = {
 
   isEqual: function(assertionToCheck, expectedValue){
     if (assertionToCheck !== expectedValue) {
-      throw new Error("Assertion failed: " + assertionToCheck + " is not equal.")
+      throw new Error("Assertion failed: " + assertionToCheck + " is not equal to " + expectedValue)
     }
   },
 
@@ -27,8 +27,8 @@ var it = function(nameString, callback){
     var text = "PASS: " + nameString
      addtext(text, "passColour")
   }catch(err){
-    text = "FAIL: " + nameString + err + err.stack
-    document.write()
+    text = "FAIL: " + nameString + err.stack
+    addtext(text, "failColour")
   }
 
   };

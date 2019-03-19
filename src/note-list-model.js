@@ -2,7 +2,7 @@
 
   function NoteList() {
 
-    this._notes = ["I am in your array"];
+    this._notes = [];
 
   }
 
