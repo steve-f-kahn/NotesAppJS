@@ -10,7 +10,7 @@ var assert = {
     if (assertionToCheck == expectedValue) {
       console.log(`PASS - ${expectedValue} is equal to ${assertionToCheck}.`)
     } else {
-      console.log((`FAIL - ${expectedValue} is NOT equal to ${assertionToCheck}. Comiserations :-(.`))
+      console.log((`FAIL - ${expectedValue} is NOT equal to ${assertionToCheck}.`))
     }
   },
 
@@ -18,8 +18,13 @@ var assert = {
      if (arrayToCheck.includes(value)) {
      console.log(`PASS - ${value} is inside ${arrayToCheck}`)
    } else {
-     console.log(`FAIL - ${value} is not present in ${arrayToCheck}. This is a fail.`)
+     console.log(`FAIL - ${value} is not present in ${arrayToCheck}.`)
    }
 
    }
+};
+
+var it = function(nameString, functionToPass){
+  yourTest = functionToPass;
+  return yourTest;
 };
