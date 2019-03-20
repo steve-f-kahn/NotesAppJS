@@ -6,5 +6,6 @@ function NoteDouble() {
 it("app div has not text on load", function() {
   var noteController = new NoteController()
   noteController._setup()
-  assert.isEqual(document.getElementById('app').innerHTML, '<ul></ul>')
+  console.log(document.getElementById('app'))
+  assert.isEqual(document.getElementById('app').child, )
 });
