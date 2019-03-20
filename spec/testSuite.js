@@ -33,6 +33,10 @@ var it = function(nameString, callback){
 
   };
 
+var describe = function(nameString, callback){
+  callback()
+}
+
 var addtext = function(text, passing){
   var text = document.createTextNode(text)
   var div = document.createElement("div")
@@ -43,6 +47,6 @@ var addtext = function(text, passing){
 }
 exports.assert = assert
 exports.it = it
-
+exports.describe = describe
 
 })(this);
