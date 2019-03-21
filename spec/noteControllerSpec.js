@@ -19,8 +19,9 @@ it("is created with a default note", function(){
 
 it("app div has no text on load", function() {
   window.addEventListener('load', function(){
-    var noteController = new NoteController(noteListDouble)
+    noteListDouble2 = new NoteListDouble()
+    var noteController = new NoteController(noteListDouble2)
     noteController._setup()
-    assert.isEqual(document.getElementById('app').innerHTML, "<ul></ul>" )
+    assert.isEqual(document.getElementById('app').innerHTML, "<ul><li><div>test note</div></li></ul>" )
     })
 });
