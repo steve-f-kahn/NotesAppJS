@@ -3,9 +3,10 @@ function NoteDouble() {
 };
 
 
-it("app div has not text on load", function() {
-  var noteController = new NoteController()
-  noteController._setup()
-  console.log(document.getElementById('app'))
-  assert.isEqual(document.getElementById('app').child, )
+it("app div has no text on load", function() {
+  window.addEventListener('load', function(){
+    var noteController = new NoteController()
+    noteController._setup()
+    assert.isEqual(document.getElementById('app').innerHTML, "<ul></ul>" )
+    })
 });

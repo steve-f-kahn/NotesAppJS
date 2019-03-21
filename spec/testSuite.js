@@ -26,8 +26,9 @@ var it = function(nameString, callback){
     callback()
     var text = "PASS: " + nameString
      addtext(text, "passColour")
-  }catch(err){
-    text = "FAIL: " + nameString + err.stack
+  } catch(error) {
+
+    text = "FAIL: " + nameString + error.stack
     addtext(text, "failColour")
   }
 
