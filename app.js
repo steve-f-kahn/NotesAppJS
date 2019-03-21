@@ -3,3 +3,4 @@
 
 var controller = new NoteController()
 controller._setup()
+controller.listen()

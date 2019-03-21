@@ -11,7 +11,12 @@
         var noteListView = new NoteListView(this.noteList)
         // noteListView.list.addNote(note)
         document.getElementById("app").innerHTML = noteListView.format()
-      }
+      },
+    listen: function() {
+      window.addEventListener('hashchange', function(){
+        
+      })
+    }
 
     }
 exports.NoteController = NoteController
