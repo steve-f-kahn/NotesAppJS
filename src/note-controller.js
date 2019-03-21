@@ -1,5 +1,5 @@
 (function(exports){
-  function NoteController(noteList){
+  function NoteController(noteList = new NoteList){
     this.noteList = noteList
     this.noteList.addNote(new Note('Favourite drink: seltzer'))
     this._setup
@@ -14,7 +14,11 @@
       },
     listen: function() {
       window.addEventListener('hashchange', function(){
-        
+        var div = document.createElement('div')
+        var text = document.createTextNode("Is this working")
+        div.append(text)
+        document.getElementById("app").append(div)
+        console.log("hi")
       })
     }
 

@@ -31,6 +31,7 @@ it("sets up and then clicks on link which takes you to new location",function(){
   var noteController = new NoteController(noteListDouble3)
   noteController._setup()
   noteController.listen()
-  document.getElementById('note0').click()
+  window.location = "/Users/student/Projects/notesAppWithLuke/specRunner.html#"
+  document.getElementById("note0").click()
   assert.isEqual(window.location.hash.split('#')[1],"notes/0")
 })

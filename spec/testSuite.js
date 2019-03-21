@@ -43,8 +43,8 @@ var addtext = function(text, passing){
   var div = document.createElement("div")
   div.setAttribute("class", passing)
   div.append(text)
-  body.append(div)
-  body.append(document.createElement("br"))
+  document.getElementById("test").append(div)
+  document.getElementById("test").append(document.createElement("br"))
 }
 exports.assert = assert
 exports.it = it
