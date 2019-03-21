@@ -1,5 +1,8 @@
 (function(exports){
-  function NoteController(){
+  function NoteController(noteList){
+    this.noteList = noteList
+    console.log(this.noteList)
+    this.noteList.addNote(new Note('Favourite drink: seltzer'))
     this._setup
   }
 

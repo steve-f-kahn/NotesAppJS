@@ -2,10 +2,24 @@ function NoteDouble() {
   this.text = 'test note'
 };
 
+function NoteListDouble() {
+  this._notes = []
+}
+
+NoteListDouble.prototype.addNote = function (note) {
+  noteDouble = new NoteDouble()
+  this._notes.push(noteDouble)
+}
+
+it("is created with a default note", function(){
+  noteListDouble = new NoteListDouble()
+  noteController = new NoteController(noteListDouble)
+  assert.isEqual(noteController.noteList._notes[0].text, 'test note')
+})
 
 it("app div has no text on load", function() {
   window.addEventListener('load', function(){
-    var noteController = new NoteController()
+    var noteController = new NoteController(noteListDouble)
     noteController._setup()
     assert.isEqual(document.getElementById('app').innerHTML, "<ul></ul>" )
     })
