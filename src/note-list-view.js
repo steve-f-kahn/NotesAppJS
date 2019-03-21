@@ -7,7 +7,7 @@ function NoteListView(noteList = new NoteList()){
 NoteListView.prototype.format = function () {
   var text = new String()
   this.list._notes.forEach(function(note){
-    text +=("<li><div>" + note.text + "</div></li>")
+    text +=("<li><div>" + note.text.substring(0, 20) + "</div></li>")
   })
   return "<ul>" + text + "</ul>"
 };
