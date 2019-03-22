@@ -18,7 +18,6 @@
         var text = document.createTextNode("Is this working")
         div.append(text)
         document.getElementById("app").append(div)
-        console.log("hi")
       })
     }
 

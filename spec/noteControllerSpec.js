@@ -27,11 +27,13 @@ it("app div has no text on load", function() {
     })
 });
 it("sets up and then clicks on link which takes you to new location",function(){
-  noteListDouble3 = new NoteListDouble()
-  var noteController = new NoteController(noteListDouble3)
-  noteController._setup()
-  noteController.listen()
-  window.location = "/Users/student/Projects/notesAppWithLuke/specRunner.html#"
-  document.getElementById("note0").click()
-  assert.isEqual(window.location.hash.split('#')[1],"notes/0")
+    noteListDouble3 = new NoteListDouble()
+    var noteController = new NoteController(noteListDouble3)
+    noteController._setup()
+    noteController.listen()
+    window.addEventListener('load', function(){
+    document.getElementById("note0").click()
+    assert.isEqual(window.location.hash.split('#')[1],"notes/0")
+  })
+
 })
